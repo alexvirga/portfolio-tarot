@@ -1,40 +1,53 @@
+// Card.tsx
 import React from "react";
-import { animated, to as interpolate, SpringValue } from "@react-spring/web";
-import cardBackImage from "../assets/cardBack.jpg";
-import { animationConfig } from "./animations";
+import { animated, to as interpolate } from "@react-spring/web";
 
 interface CardProps {
-  x: SpringValue<number>;
-  y: SpringValue<number>;
-  rotateY: SpringValue<number>;
-  frontImage: string;
+  x: any;
+  y: any;
+  rotateY: any;
+  cardImage: string;
+  cardBackImage: string;
   onClick: () => void;
 }
 
-export const Card: React.FC<CardProps> = ({
+const flipTrans = (rotateY: number) =>
+  `perspective(1500px) rotateY(${rotateY}deg)`;
+
+const Card: React.FC<CardProps> = ({
   x,
   y,
   rotateY,
-  frontImage,
+  cardImage,
+  cardBackImage,
   onClick,
-}) => (
-  <animated.div
-    style={{
-      transform: interpolate([x, y], (x, y) => `translate3d(${x}px,${y}px,0)`),
-    }}
-    className="card"
-    onClick={onClick}
-  >
+}) => {
+  return (
     <animated.div
-      style={{ transform: interpolate([rotateY], animationConfig.flip) }}
-      className="card-inner"
+      style={{
+        transform: interpolate(
+          [x, y],
+          (x, y) => `translate3d(${x}px,${y}px,0)`
+        ),
+      }}
+      className="card"
+      onClick={onClick}
     >
-      <div className="card-face card-front">
-        <img src={frontImage} alt="Tarot Card Front" />
-      </div>
-      <div className="card-face card-back">
-        <img src={cardBackImage} alt="Tarot Card Back" />
-      </div>
+      <animated.div
+        style={{
+          transform: interpolate([rotateY], (rotateY) => flipTrans(rotateY)),
+        }}
+        className="card-inner"
+      >
+        <div className="card-face card-front">
+          <img src={cardImage} alt="Card Front" />
+        </div>
+        <div className="card-face card-back">
+          <img src={cardBackImage} alt="Card Back" />
+        </div>
+      </animated.div>
     </animated.div>
-  </animated.div>
-);
+  );
+};
+
+export default Card;

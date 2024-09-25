@@ -1,12 +1,12 @@
-/* General Layout */
 body,
 html {
   margin: 0;
   padding: 0;
   height: 100%;
-  overflow: hidden; /* No scrolling */
+  overflow: hidden;
 }
 
+/* General Layout */
 .app-container {
   display: flex;
   justify-content: center;
@@ -15,16 +15,6 @@ html {
   background-color: #121212;
 }
 
-/* Card Deck View */
-.card-deck-container {
-  display: flex;
-  justify-content: space-around;
-  width: 80%;
-}
-
-.card:hover {
-  transform: scale(1.05);
-}
 .deck-container {
   display: flex;
   justify-content: center;
@@ -34,16 +24,19 @@ html {
   position: relative;
 }
 
-/* Each card container */
+/* Card Styles */
 .card {
   position: absolute;
   width: 200px;
   height: 300px;
-  will-change: transform;
   cursor: pointer;
+  will-change: transform;
 }
 
-/* Card inner (flipping container) */
+.card:hover {
+  transform: scale(1.05);
+}
+
 .card-inner {
   width: 100%;
   height: 100%;
@@ -52,43 +45,29 @@ html {
   transition: transform 0.8s ease-in-out;
 }
 
-/* Card faces (front and back) */
+/* Card Faces (Front and Back) */
 .card-face {
   position: absolute;
   width: 100%;
   height: 100%;
-  backface-visibility: hidden; /* Hide the backface when flipping */
+  backface-visibility: hidden;
 }
 
 .card-front {
   z-index: 2;
-  transform: rotateY(0deg); /* Front face is facing forward */
+  transform: rotateY(0deg);
 }
 
 .card-back {
-  transform: rotateY(180deg); /* Back face is behind */
-}
-
-/* Flip animation styles */
-.card-content {
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
-  will-change: transform;
+  transform: rotateY(180deg);
 }
 
 .card img {
   width: auto;
   height: 100%;
   object-fit: cover;
-  border-radius: 8px;
-}
-
-.card h2 {
-  margin-top: 10px;
-  color: #fff;
-  font-size: 1.2em;
+  border-radius: 10px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 /* Content View */
@@ -121,6 +100,7 @@ button:hover {
   background-color: #555;
 }
 
+/* Experience Section */
 .experience-container {
   display: flex;
   justify-content: space-between;
@@ -131,7 +111,7 @@ button:hover {
 
 /* Left Section: Tarot Card */
 .experience-left {
-  width: 33.33%; /* 1/3 of the page */
+  width: 33.33%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -139,7 +119,7 @@ button:hover {
 }
 
 .experience-left img {
-  height: 40vh; /* Card size remains consistent */
+  height: 40vh;
   max-width: 100%;
   object-fit: contain;
   border-radius: 10px;
@@ -148,10 +128,10 @@ button:hover {
 
 /* Right Section: Scrollable Resume */
 .experience-right {
-  width: 66.66%; /* 2/3 of the page */
+  width: 66.66%;
   padding: 20px;
   background-color: #1e1e1e;
-  overflow-y: auto; /* Scrollable */
+  overflow-y: auto;
   color: #fff;
 }
 
@@ -187,4 +167,40 @@ button:hover {
 
 .back-button:hover {
   background-color: #555;
+}
+
+/* Media Queries for Mobile */
+@media (max-height: 800px) {
+  .card {
+    width: 150px;
+    height: 220px;
+  }
+}
+
+@media (max-height: 600px) {
+  .card {
+    width: 130px;
+    height: 200px;
+  }
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 480px) {
+  .deck-container {
+    flex-direction: column;
+    padding-top: 10px;
+    align-items: center;
+  }
+
+  .card {
+    width: 140px;
+    height: 200px;
+  }
+
+  @media (max-width: 400px) {
+    .card {
+      width: 120px;
+      height: 180px;
+    }
+  }
 }
