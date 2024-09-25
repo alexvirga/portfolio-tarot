@@ -2,11 +2,11 @@
 import React, { useState, useEffect } from "react";
 import { useSprings } from "@react-spring/web";
 import Card from "./Card";
-import experienceImage from "../assets/experience.png";
-import aboutImage from "../assets/aboutme.png";
-import projectImage from "../assets/projects.jpg";
-import cardBackImage from "../assets/cardBack.jpg";
-import "./styles.css";
+import experienceImage from "../../assets/experience.png";
+import aboutImage from "../../assets/aboutme.png";
+import projectImage from "../../assets/projects.jpg";
+import cardBackImage from "../../assets/cardBack.jpg";
+import "./CardDeck.css";
 
 const cards = [aboutImage, experienceImage, projectImage];
 
@@ -59,6 +59,7 @@ const CardDeck: React.FC<{ onCardClick: (view: string) => void }> = ({
     }, 1200);
 
     return () => {
+      // cleanup
       clearTimeout(dealTimeout);
       clearTimeout(flipTimeout);
     };

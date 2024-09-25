@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import CardDeck from "./Components/CardDeck";
-import About from "./Components/About";
-import Experience from "./Components/Experience";
-import Projects from "./Components/Projects";
+import CardDeck from "./Components/CardDeck/CardDeck";
+import About from "./Components/About/About";
+import Experience from "./Components/Experience/Experience";
+import Projects from "./Components/Projects/Projects";
 import "./Components/styles.css";
 
 const App = () => {

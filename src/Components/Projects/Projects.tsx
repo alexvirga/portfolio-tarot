@@ -1,4 +1,5 @@
-import "./styles.css";
+import { BackButton } from "../Shared/BackButton";
+import "./Projects.css";
 
 interface ProjectsProps {
   onBack: () => void;
@@ -7,9 +8,7 @@ interface ProjectsProps {
 const Projects = ({ onBack }: ProjectsProps) => {
   return (
     <div className="content-view">
-      <button className="back-button" onClick={onBack}>
-        Back
-      </button>
+      <BackButton onBack={onBack} />
       <h1>Projects</h1>
     </div>
   );

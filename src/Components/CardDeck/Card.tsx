@@ -1,6 +1,7 @@
 // Card.tsx
 import React from "react";
 import { animated, to as interpolate } from "@react-spring/web";
+import "./CardDeck.css";
 
 interface CardProps {
   x: any;
