@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import CardDeck from "./Components/CardDeck/CardDeck";
 import About from "./Components/About/About";
 import Experience from "./Components/Experience/Experience";
