@@ -1,10 +1,9 @@
-/* about.css */
 .about-container {
   display: flex;
   justify-content: space-between;
   width: 100vw;
   height: 100vh;
-  background-color: #121212;
+  background-color: #363535;
 }
 
 .about-left {
@@ -12,11 +11,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #1c1c1c;
+  background-color: #efeee6;
+  padding: 20px;
 }
 
 .about-left img {
-  height: 40vh;
+  max-height: 40vh;
   max-width: 100%;
   object-fit: contain;
   border-radius: 10px;
@@ -26,15 +26,17 @@
 .about-right {
   width: 66.66%;
   padding: 20px;
-  background-color: #1e1e1e;
+  background-color: #303030;
   overflow-y: auto;
-  color: #fff;
+  color: #e6e6e6;
+  max-height: 100vh;
+  box-sizing: border-box;
 }
 
 .about-content {
   max-width: 800px;
+  padding-bottom: 20px;
 }
-
 .about-content h1 {
   font-size: 3em;
 }
@@ -58,4 +60,56 @@
 .email {
   text-decoration: underline;
   color: white;
+}
+
+.my-photo {
+  max-height: 14em;
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.intro-photo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+@media (max-width: 600px) {
+  .about-container {
+    flex-direction: column;
+    overflow: hidden;
+    align-items: center;
+  }
+
+  .about-left {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20%;
+  }
+
+  .about-right {
+    width: 100%;
+    padding: 20px;
+    overflow-y: auto;
+    max-height: 80vh;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .about-content {
+    padding: 20px;
+    padding-bottom: 40px;
+    flex-grow: 1;
+  }
+
+  .about-left img {
+    height: 90%;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
+  }
 }

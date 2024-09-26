@@ -11,11 +11,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #1c1c1c;
+  background-color: #efeee6;
+  padding: 20px;
 }
 
 .experience-left img {
-  height: 40vh;
+  max-height: 40vh;
   max-width: 100%;
   object-fit: contain;
   border-radius: 10px;
@@ -25,35 +26,34 @@
 .experience-right {
   width: 66.66%;
   padding: 20px;
-  background-color: #1e1e1e;
+  background-color: #303030;
   overflow-y: auto;
-  color: #fff;
+  color: #e6e6e6;
+  max-height: 100vh;
+  box-sizing: border-box;
 }
 
 .resume-content {
   max-width: 800px;
+  padding-bottom: 20px;
 }
+
 .resume-content h1 {
   font-size: 3em;
+  color: #e6e6e6;
 }
 .resume-content h3 {
   font-weight: 300;
+  color: #e6e6e6;
+}
+.resume-content p {
+  font-weight: 300;
+  color: #e6e6e6;
 }
 
 .vertical-timeline-element-title {
   font-size: 1.8em;
   margin-bottom: 15px;
-}
-
-.vertical-timeline-element ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-.vertical-timeline-element li {
-  margin-bottom: 10px;
-  font-size: 1.2em;
-  line-height: 1.6em;
 }
 
 .tech-logo {
@@ -68,4 +68,43 @@
 
 .skills-container {
   margin: 20px 0px;
+}
+
+@media (max-width: 600px) {
+  .experience-container {
+    flex-direction: column;
+    overflow: hidden;
+    align-items: center;
+  }
+
+  .experience-left {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20%;
+  }
+
+  .experience-right {
+    width: 100%;
+    padding: 20px;
+    overflow-y: auto;
+    max-height: 80vh;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .resume-content {
+    padding: 20px;
+    padding-bottom: 40px;
+    flex-grow: 1;
+  }
+
+  .experience-left img {
+    height: 90%;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
+  }
 }

@@ -1,6 +1,8 @@
 import React from "react";
 import "./About.css";
 import aboutImage from "../../assets/aboutme.png";
+import meImage from "../../assets/me.png";
+import { BackButton } from "../Shared/BackButton";
 
 interface AboutProps {
   onBack: () => void;
@@ -10,15 +12,16 @@ const About: React.FC<AboutProps> = ({ onBack }) => {
   return (
     <div className="about-container">
       <div className="about-left">
-        <button className="back-button" onClick={onBack}>
-          Back
-        </button>
+        <BackButton onBack={onBack} />
         <img src={aboutImage} alt="about Card" />
       </div>
 
       <div className="about-right">
         <div className="about-content">
-          <h1> Hi, I'm Alex </h1>
+          <div className="intro-photo">
+            <h1> Hi, I'm Alex </h1>
+            <img className="my-photo" src={meImage} alt="about Card" />
+          </div>
           <p>
             I'm a Full Stack Software Engineer based in Los Angeles (and
             sometimes New York). I have a passion for building meaningful

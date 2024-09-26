@@ -10,6 +10,7 @@ import reactLogo from "../../assets/logos/react-logo.svg";
 import nodeLogo from "../../assets/logos/nodejs-logo.svg";
 import postgresLogo from "../../assets/logos/postgresql-logo.svg";
 import graphqlLogo from "../../assets/logos/graphql-logo.svg";
+import { BackButton } from "../Shared/BackButton";
 
 import "./Experience.css";
 
@@ -21,17 +22,12 @@ const Experience = ({ onBack }: ExperienceProps) => {
   return (
     <div className="experience-container">
       <div className="experience-left">
-        <button className="back-button" onClick={onBack}>
-          Back
-        </button>
+        <BackButton onBack={onBack} />
         <img src={experienceImage} alt="Experience Card" />
       </div>
 
       <div className="experience-right">
         <div className="resume-content">
-          <h1>Experience</h1>
-
-          <br />
           <div className="skills-container">
             <h3> I'm great with: </h3>
 
@@ -129,8 +125,7 @@ const Experience = ({ onBack }: ExperienceProps) => {
                 contentStyle={{ background: "#1e1e1e", color: "#fff" }}
                 contentArrowStyle={{ borderRight: "7px solid #1e1e1e" }}
                 date="2012 - 2016"
-                iconStyle={{ background: "#4CAF50", color: "#fff" }}
-                icon={<i className="fas fa-briefcase"></i>}
+                iconStyle={{ background: "#ffffff", color: "#fff" }}
               >
                 <h3 className="vertical-timeline-element-title">
                   University of Scranton
