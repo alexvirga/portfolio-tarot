@@ -11,10 +11,12 @@ const cards = [aboutImage, experienceImage, projectImage];
 
 const isMobile = window.innerWidth <= 480;
 const cardHeight = isMobile ? 200 : 300;
-const containerHeight = window.innerHeight;
 const totalCardHeight = cards.length * cardHeight;
+const containerHeight = window.innerHeight;
+const dynamicContainerHeight =
+  containerHeight - (window.visualViewport?.offsetTop || 0); // Consider dynamic height
 const verticalPadding =
-  (containerHeight - totalCardHeight) / (cards.length + 1);
+  (dynamicContainerHeight - totalCardHeight) / (cards.length + 1);
 
 const stacked = (i: number) => ({
   x: 0,
@@ -27,7 +29,7 @@ const stacked = (i: number) => ({
 const dealt = (i: number) => ({
   x: isMobile ? 0 : i * 220 - 220,
   y: isMobile
-    ? verticalPadding * (i + 1) + cardHeight * i - containerHeight / 2.5
+    ? verticalPadding * (i + 1) + cardHeight * i - dynamicContainerHeight / 2.5
     : 0,
   scale: 1,
   rot: 0,
