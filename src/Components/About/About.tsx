@@ -1,7 +1,7 @@
 import React from "react";
 import "./About.css";
 import aboutImage from "../../assets/aboutme.png";
-import meImage from "../../assets/me.png";
+import meImage from "../../assets/me.webp";
 import { BackButton } from "../Shared/BackButton";
 
 interface AboutProps {
