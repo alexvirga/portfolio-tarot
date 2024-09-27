@@ -92,8 +92,8 @@ const CardDeck: React.FC<{
     <div className="deck-container">
       <div className="info">
         <span className="name"> ALEX VIRGA </span>
-        <span> Software Engineer </span>
-        <span> Los Angeles </span>
+        <span className="sub-info"> Software Engineer </span>
+        <span className="sub-info"> Los Angeles </span>
       </div>
       {props.map(({ x, y }, i) => (
         <Card
