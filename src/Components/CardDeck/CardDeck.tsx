@@ -90,7 +90,7 @@ const CardDeck: React.FC<{
     <div className="deck-container">
       <div className="info">
         <span className="name"> ALEX VIRGA </span>
-        <span> alexander.virga@gmail.com </span>
+        <span> Software Engineer </span>
         <span> Los Angeles </span>
       </div>
       {props.map(({ x, y }, i) => (
